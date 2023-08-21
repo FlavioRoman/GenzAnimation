@@ -1,0 +1,175 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  width: 100%;
+  min-height: 100vh;
+  background-color: #252525;
+}
+
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.3);
+  z-index: 1;
+}
+
+.box_circle {
+  width: 100px;
+  height: 100px;
+  animation-delay: 3s;
+  animation-duration: 1s;
+  animation-name: boxCirlce;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+}
+
+@keyframes boxCirlce {
+  to {
+    opacity: 0;
+    transform: scale(0);
+  }
+  from {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.circle {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+  width: 100px;
+  height: 100px;
+  border-radius: 100%;
+  animation-duration: 0.1s;
+  border: 3px solid #fff;
+  animation-name: circleMove;
+  animation-iteration-count: infinite;
+  box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
+  box-shadow: 0px 0px 2px 2px #0090E8;
+  background-image: linear-gradient(to top, #0090E8, #CB2D7E, #EEB758);
+}
+
+.circle::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 30px;
+  height: 30px;
+  margin: auto;
+  border-radius: 100%;
+  background-color: #252525;
+}
+
+
+@keyframes circleMove {
+  to {
+    transform: rotate(0deg);
+  }
+  from {
+    transform: rotate(359deg);
+  }
+}
+
+.logo {
+  width: 220px;
+  height: 100px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  opacity: 0;
+  margin: auto;
+  animation-delay: 3s;
+  animation-duration: 2s;
+  animation-name: logoShow;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+}
+
+@keyframes logoShow {
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+  from {
+    opacity: 0;
+    transform: scale(0);
+  }
+}
+
+.left_bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  width: 0%;
+  height: 0%;
+  animation-delay: 3s;
+  animation-duration: 2s;
+  animation-name: widthLeft;
+  background-color: #0090E8;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+  box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
+  clip-path: polygon(0 0, 0% 100%, 100% 100%);
+}
+
+.right_bg {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  width: 0%;
+  height: 0%;
+  animation-delay: 3s;
+  animation-duration: 2s;
+  animation-name: widthRight;
+  background-color: #CB2D7E;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+  box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
+  clip-path: polygon(0 0, 100% 0, 100% 100%);
+}
+
+@keyframes widthLeft {
+  to {
+     width: 50%;
+     height: 100%;
+  }
+  from {
+     width: 0%;
+     height: 100%;
+  }
+}
+@keyframes widthRight {
+  to {
+     width: 50%;
+     height: 100%;
+  }
+  from {
+     width: 0%;
+     height: 0%;
+  }
+}
